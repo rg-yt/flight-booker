@@ -1,24 +1,5 @@
-# README
+# Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project I will be building a flight booker app to select 1 way flights. This will involve using advanced form techniques in rails. We will also be using seed data to fill the database for testing purposes. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Project: Flight Booker](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker)
