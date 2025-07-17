@@ -1,0 +1,6 @@
+<h1>Flight list</h1>
+<ul>
+<%  @flights.each do |flight| %>
+    <li> <%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %> </li>
+<% end %>
+</ul>
