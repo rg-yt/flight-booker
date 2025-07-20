@@ -1,0 +1,6 @@
+<h1>Flight Booking</h1>
+<%= form_with model: @booking do |f| %>
+    <% params[:passengers].to_i times do |p| %>
+        <%= field_for @booking.passengers %>
+    <% end %>
+<% end %>
