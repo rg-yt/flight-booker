@@ -1,6 +1,9 @@
-<h1>Flight list</h1>
-<ul>
-<%  @flights.each do |flight| %>
-    <li> <%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %> </li>
-<% end %>
-</ul>
+<h1>Flight Booker</h1>
+
+<form method="get">
+    <%= select_tag(:outbound_airport, options_for_select(@airport_options)) %>
+    <%= select_tag(:destination_airport, options_for_select(@airport_options)) %>
+    <%= select_tag(:number_of_passengers, options_for_select(@passenger_options))%>
+    <%= select_tag(:date, options_for_select(@date_options)) %>
+    <button type="submit">Submit</button>
+</form>
