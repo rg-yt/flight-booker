@@ -1,9 +1,15 @@
 <h1>Flight Booker</h1>
 
-<form method="get">
+<%= form_with method: :get do |form| %>
     <%= select_tag(:outbound_airport, options_for_select(@airport_options)) %>
     <%= select_tag(:destination_airport, options_for_select(@airport_options)) %>
     <%= select_tag(:number_of_passengers, options_for_select(@passenger_options))%>
     <%= select_tag(:date, options_for_select(@date_options)) %>
     <button type="submit">Submit</button>
-</form>
+<% end %>
+
+<% if @flights.any? %>
+    <% @flights.each do |flight| %>
+        <p><%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %> on <%= flight.datetime.strftime("%B %d %Y at %I:%M %P") %></p> 
+    <% end %>
+<% end %>
