@@ -9,7 +9,7 @@
 <% end %>
 
 <% if @flights.any? %>
-    <% @flights.each do |flight| %>
-        <p><%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %> on <%= flight.datetime.strftime("%B %d %Y at %I:%M %P") %></p> 
+    <%= form_with method: :get do |form| %>
+        <%= form.collection_radio_buttons :flight, @flights, :id, :flight_label %>
     <% end %>
 <% end %>
