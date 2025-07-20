@@ -9,7 +9,9 @@
 <% end %>
 
 <% if @flights.any? %>
-    <%= form_with method: :get do |form| %>
+    <%= form_with model: Booking.new do |form| %>
         <%= form.collection_radio_buttons :flight, @flights, :id, :flight_label %>
+        <%= form.hidden_field :passengers, value: params[:number_of_passengers] %>
+        <%= form.button :submit %>
     <% end %>
 <% end %>
