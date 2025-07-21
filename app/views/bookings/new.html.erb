@@ -1,6 +1,12 @@
 <h1>Flight Booking</h1>
 <%= form_with model: @booking do |f| %>
-    <% params[:passengers].to_i times do |p| %>
-        <%= field_for @booking.passengers %>
-    <% end %>
+    <%= f.hidden_field :flight_id, value: @flight.id %>
+    <%= f.fields_for :passengers do |sub_form| %>
+        <%= sub_form.label :name %>
+        <%= sub_form.text_field :name %>
+
+        <%= sub_form.label :email %>
+        <%= sub_form.email_field :email %>
+    <% end %> 
+    <%= f.submit %>
 <% end %>
