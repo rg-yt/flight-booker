@@ -1,0 +1,10 @@
+<h1>Booking Information</h1>
+<h2>Flight</h2>
+<p><%= @booking.flight.departure_airport.code %> to <%= @booking.flight.arrival_airport.code %> on <%= @booking.flight.datetime.strftime("%B %d %Y") %></p>
+<h2>Passengers</h2>
+<ul>
+    <% @booking.passengers.each do |p| %>
+        <li><%= p.name %></li>
+
+    <% end %>
+</ul>
